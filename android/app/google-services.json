@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "737945678804",
+    "project_id": "cowifi-2021",
+    "storage_bucket": "cowifi-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737945678804:android:18c92651082c327e9ddc41",
+        "android_client_info": {
+          "package_name": "com.locus.cowifi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737945678804-hcbus66b0v851eocgllodkmao793gdcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.locus.cowifi",
+            "certificate_hash": "449bc37ace740e2bf58d49f09cb38aaa70b46fbe"
+          }
+        },
+        {
+          "client_id": "737945678804-m5fiov2rd9jifotg0lsvog9s8vccuet7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2KD-Xzrutitj-wRyKaLv9UW6h_wOKxUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737945678804-m5fiov2rd9jifotg0lsvog9s8vccuet7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
