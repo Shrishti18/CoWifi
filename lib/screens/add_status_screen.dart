@@ -63,7 +63,7 @@ class _AddStatusState extends State<AddStatus> {
       body: loading
           ? Center(
               child: SpinKitFadingCircle(
-                color: Colors.blue,
+                color: Colors.teal,
                 size: 50.0,
               ),
             )

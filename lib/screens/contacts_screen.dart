@@ -57,7 +57,7 @@ class _ContactScreenState extends State<ContactScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SpinKitFadingCircle(
-                              color: Colors.blue,
+                              color: Colors.teal,
                               size: 50.0,
                             ),
                             SizedBox(
