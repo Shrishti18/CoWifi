@@ -14,7 +14,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[50],
+      backgroundColor: Color(0xfff3ebdb),
       appBar: AppBar(
         title: Text("Log In"),
       ),
@@ -23,6 +23,7 @@ class _AuthenticateState extends State<Authenticate> {
         child: Form(
           key: _formkey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextFormField(
                   decoration:
@@ -39,20 +40,14 @@ class _AuthenticateState extends State<Authenticate> {
                     setState(() {});
                   }),
               SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton.icon(
-                    icon: Icon(Icons.person),
-                    onPressed: () {
-                      if (_formkey.currentState.validate()) {
-                        FirebaseAuthenticate.verifyPhoneNumber(
-                            _number, context);
-                      }
-                    },
-                    label: Text("Sign In"),
-                  ),
-                ],
+              ElevatedButton.icon(
+                icon: Icon(Icons.person),
+                onPressed: () {
+                  if (_formkey.currentState.validate()) {
+                    FirebaseAuthenticate.verifyPhoneNumber(_number, context);
+                  }
+                },
+                label: Text("Sign In"),
               ),
             ],
           ),

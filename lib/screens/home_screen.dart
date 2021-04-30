@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
         stream: Database.userdata(user),
         builder: (context, snapshot) {
           return Scaffold(
-              backgroundColor: Colors.brown[50],
+              backgroundColor: Color(0xfff3ebdb),
               appBar: AppBar(
                 title: Text("Home"),
               ),
@@ -56,26 +56,28 @@ class _HomeState extends State<Home> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    child: Icon(Icons.person_rounded,
-                        size: 25.0, color: Colors.grey[800]),
-                    radius: 25.0,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(data != null ? data["name"] : "Loading..",
-                            style: TextStyle(fontSize: 20.0)),
-                        SizedBox(height: 5.0),
-                        Text("Click on \"+ Product\" to add status",
-                            style: TextStyle(color: Colors.grey[700]))
-                      ],
-                    ),
-                  ],
+                        CircleAvatar(
+                          child: Icon(Icons.person_rounded,
+                              size: 25.0, color: Colors.grey[800]),
+                          radius: 25.0,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(data != null ? data["name"] : "Loading..",
+                                style: TextStyle(fontSize: 20.0)),
+                            SizedBox(height: 5.0),
+                            Text("Click on \"+ Product\" to add status",
+                                style: TextStyle(color: Colors.grey[700]))
+                          ],
+                        ),
+                      ]),
                 ),
                 TextButton.icon(
                   style: ButtonStyle(

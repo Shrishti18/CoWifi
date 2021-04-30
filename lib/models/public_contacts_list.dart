@@ -81,7 +81,8 @@ class _PublicContactsListState extends State<PublicContactsList> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: TextField(
-        decoration: inputdecoration.copyWith(hintText: "search for product"),
+        decoration:
+            inputdecoration.copyWith(hintText: "Filter result by product name"),
         onChanged: (value) {
           searchText = value.toString();
           setState(() {});

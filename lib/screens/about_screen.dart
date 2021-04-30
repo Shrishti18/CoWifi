@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatefulWidget {
   @override
@@ -9,14 +10,16 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff3ebdb),
       appBar: AppBar(
         title: Text('Help'),
       ),
       body: Column(
         children: [
           ListTile(
+            leading: Icon(Icons.help),
             title: Text("How to Use"),
-            tileColor: Colors.blueGrey[100],
+            tileColor: Colors.teal[100],
           ),
           Card(
             child: Padding(
@@ -67,16 +70,31 @@ class _AboutState extends State<About> {
               ),
             ),
           ),
+          Divider(),
           ListTile(
+              leading: Icon(Icons.contact_mail),
               title: Text("Contact Us"),
-              tileColor: Colors.blueGrey[100],
+              tileColor: Colors.teal[100],
               trailing: TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    launch(
+                        "mailto:locus02021@gmail.com?subject=Feedback&body=Hello%20team%20Locus,");
+                  },
                   icon: Icon(
                     Icons.email,
                     size: 15.0,
                   ),
                   label: Text("locus02021@gmail.com"))),
+          Divider(),
+          ListTile(
+              leading: Icon(Icons.web),
+              title: Text("Visit our Site"),
+              tileColor: Colors.teal[100],
+              trailing: TextButton(
+                  onPressed: () {
+                    launch("https://locus02021.wixsite.com/cowifi");
+                  },
+                  child: Text("locus02021.wixsite.com/cowifi"))),
         ],
       ),
     );

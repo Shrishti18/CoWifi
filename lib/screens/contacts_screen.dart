@@ -31,7 +31,7 @@ class _ContactScreenState extends State<ContactScreen> {
         stream: Database.userdata(user),
         builder: (context, snapshot) {
           return Scaffold(
-            backgroundColor: Colors.brown[50],
+            backgroundColor: Color(0xfff3ebdb),
             appBar: AppBar(
               title: Text("My Contacts"),
               actions: [
@@ -56,7 +56,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SpinKitFadingCircle(
+                            SpinKitRing(
                               color: Colors.teal,
                               size: 50.0,
                             ),

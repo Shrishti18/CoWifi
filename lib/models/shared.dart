@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cowifi/services/call_number.dart';
 
 InputDecoration inputdecoration = InputDecoration(
-  fillColor: Colors.white,
+  fillColor: Colors.brown[50],
   filled: true,
   contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
   enabledBorder: OutlineInputBorder(

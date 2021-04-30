@@ -42,11 +42,11 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return loading
         ? Container(
-            color: Colors.brown[50],
+            color: Color(0xfff3ebdb),
             child: Center(
-              child: SpinKitFadingCircle(
+              child: SpinKitRing(
                 color: Colors.teal,
-                size: 80.0,
+                size: 50.0,
               ),
             ),
           )

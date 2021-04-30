@@ -57,18 +57,18 @@ class _AddStatusState extends State<AddStatus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff3ebdb),
       appBar: AppBar(
         title: Text("Add Product"),
       ),
       body: loading
           ? Center(
-              child: SpinKitFadingCircle(
+              child: SpinKitRing(
                 color: Colors.teal,
                 size: 50.0,
               ),
             )
           : Container(
-              color: Colors.blueGrey[50],
               child: ListView(
                 children: [
                       editDescription(),
@@ -142,7 +142,6 @@ class _AddStatusState extends State<AddStatus> {
     return Column(
       children: [
         ListTile(
-          tileColor: Colors.white,
           leading: CircleAvatar(
             backgroundColor: (data[product] == "none")
                 ? Colors.grey

@@ -69,7 +69,6 @@ class PublicContactTile extends StatelessWidget {
                       onTap: () {
                         showPopUpDescription(context, data);
                       },
-                      tileColor: Colors.white,
                       leading: CircleAvatar(
                         child: Icon(
                           Icons.person,
@@ -101,7 +100,6 @@ class PublicContactTile extends StatelessWidget {
 
   Widget showContactStatus(Map status) {
     return Container(
-      color: Colors.white,
       padding: EdgeInsets.only(left: 16.0, bottom: 8.0),
       child: Wrap(
         direction: Axis.horizontal,
