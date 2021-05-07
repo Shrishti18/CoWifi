@@ -50,7 +50,7 @@ class _SettingsState extends State<Settings> {
             title: Text("Sign Out"),
             subtitle: Text("sign out of your account"),
             onTap: () {
-              FirebaseAuthenticate.signout();
+              showConfirmSignOutPopup();
             },
           ),
           Divider(),
@@ -214,6 +214,33 @@ class _SettingsState extends State<Settings> {
                   size: 35.0,
                 ),
               )
+            ],
+          );
+        });
+  }
+
+  showConfirmSignOutPopup() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Row(
+              children: [
+                Text("Confirm Sign-Out"),
+              ],
+            ),
+            content: Text(
+                "You are about to sign-out of the app and if done so, you will have to enter phone number and otp to sign in agian."),
+            actions: [
+              TextButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.teal),
+                      foregroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {
+                    FirebaseAuthenticate.signout();
+                    Navigator.pop(context);
+                  },
+                  child: Text("Confirm")),
             ],
           );
         });

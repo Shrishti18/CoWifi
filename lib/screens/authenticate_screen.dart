@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cowifi/models/shared.dart';
 import 'package:cowifi/services/firebase_auth.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Authenticate extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   final _formkey = GlobalKey<FormState>();
   String _number = '';
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,15 +42,27 @@ class _AuthenticateState extends State<Authenticate> {
                     setState(() {});
                   }),
               SizedBox(height: 20.0),
-              ElevatedButton.icon(
-                icon: Icon(Icons.person),
-                onPressed: () {
-                  if (_formkey.currentState.validate()) {
-                    FirebaseAuthenticate.verifyPhoneNumber(_number, context);
-                  }
-                },
-                label: Text("Sign In"),
-              ),
+              _loading
+                  ? Center(
+                      child: SpinKitRing(
+                        color: Colors.teal,
+                        size: 30.0,
+                        lineWidth: 5.0,
+                      ),
+                    )
+                  : ElevatedButton.icon(
+                      icon: Icon(Icons.person),
+                      onPressed: () {
+                        if (_formkey.currentState.validate()) {
+                          setState(() {
+                            _loading = true;
+                          });
+                          FirebaseAuthenticate.verifyPhoneNumber(
+                              _number, context);
+                        }
+                      },
+                      label: Text("Sign In"),
+                    ),
             ],
           ),
         ),
